@@ -46,6 +46,7 @@ addTodoForm.addEventListener("submit", (evt) => {
   const values = { name, date, id };
   const todo = generateTodo(values);
   todosList.append(todo);
+  newTodoValidator.resetValidation();
   closeModal(addTodoPopup);
 });
 
@@ -53,4 +54,6 @@ initialTodos.forEach((item) => {
   const todo = generateTodo(item);
   todosList.append(todo);
 });
-const newTodoValidator = new FormValidator(validationConfig, "#add-todo-form");
+const newTodoValidator = new FormValidator(validationConfig, addTodoForm);
+
+newTodoValidator.enableValidation();
