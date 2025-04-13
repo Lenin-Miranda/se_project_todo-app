@@ -35,6 +35,7 @@ const newTodoValidator = new FormValidator(validationConfig, addTodoForm);
 // Update the counter when a new task is added
 const popup = new PopupWithForm({
   selector: "#add-todo-popup",
+  openBtnSelector: ".button_action_add",
   handleFormSubmit: (inputValues) => {
     const name = inputValues.name;
     const dateInput = inputValues.date;
